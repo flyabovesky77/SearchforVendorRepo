@@ -1,0 +1,224 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchforVendorMainProcess" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionData" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1124,2256</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SearchforVendorMainProcess_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SearchforVendorMainProcess" sap:VirtualizedContainerService.HintSize="1134.4,2191.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: ACME System 1 - Vendors - Search" sap:VirtualizedContainerService.HintSize="1091.2,2124.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b460e4c0-4dc7-4a14-a385-e7f2e729d383" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1057.6,1884.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="VendorName" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="1014.4,122.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_Config(&quot;VendorSearchURL&quot;).ToString]" Version="V3" />
+            <Assign sap:VirtualizedContainerService.HintSize="1014.4,122.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[VendorName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_TransactionData.SpecificContent("Vendor").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT vendorName'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1014.4,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b460e4c0-4dc7-4a14-a385-e7f2e729d383" Text="[VendorName]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search" CvElementArea="331, 782, 611, 47" CvType="InputBox" DesignTimeRectangle="334, 784, 606, 42" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='vendorName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='vendorName' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="3f1fe4c8-d465-4a31-b0c5-4d958838d23e" InformativeScreenshot="4322368584a5a684b48d9361630ce246.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="1014.4,197.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b460e4c0-4dc7-4a14-a385-e7f2e729d383" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search" CvElementArea="332, 844, 90, 45" CvTextArea="346, 857, 60, 17" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="334, 845, 87, 42" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' type='button' class='btn btn-primary' aaname='Search' check:innerText='Search' /&gt;" Guid="c0199b18-7d82-42e1-a857-e863651a0e81" InformativeScreenshot="60d1de7800498d9897a97bf69ff707fe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Vendors - Search' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Blue Lagoon'" sap:VirtualizedContainerService.HintSize="1014.4,1117.6" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b460e4c0-4dc7-4a14-a385-e7f2e729d383" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,874.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="TaxID" />
+                    <Variable x:TypeArguments="x:String" Name="TaxIDValue" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="449.6,122.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[TaxID]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_TransactionData.SpecificContent("Tax ID").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NGetText DisplayName="Get Text 'Blue Lagoon'" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b460e4c0-4dc7-4a14-a385-e7f2e729d383" TextString="[TaxIDValue]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search-by-name/Blue%20Lagoon" CvTextArea="719, 797, 83, 16" CvType="AnyWordGroup" DesignTimeRectangle="673, 784, 178, 46" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' /&gt;" Guid="3c2067b6-876b-48d2-8ccd-55857a116c87" InformativeScreenshot="aa821bce52d28c8efbdcc8d32897286e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="453, 797, 101, 21" CvTextArgument="Blue Lagoon" CvType="Text" DesignTimeRectangle="334, 784, 339, 46" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' colName='Vendor' /&gt;&quot;, VendorName)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='Blue Lagoon' colName='Vendor' type='' class='' check:text='Blue Lagoon' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[TaxIDValue.Contains(TaxID)]" sap:VirtualizedContainerService.HintSize="449.6,465.6" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,200" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new BusinessRuleException(&quot;Tax ID is not maching, please check the data&quot;)]" sap:VirtualizedContainerService.HintSize="353.6,113.6" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,204" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new BusinessRuleException(&quot;Vendor is not present&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/vendors/search-by-name/Blue%20Lagoon" CvTextArea="453, 783, 101, 22" CvTextArgument="Blue Lagoon" CvType="Text" DesignTimeRectangle="334, 772, 339, 46" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' colName='Vendor' parentclass='table' /&gt;&quot;, VendorName)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='Blue Lagoon' colName='Vendor' parentclass='table' type='' class='' check:text='Blue Lagoon' /&gt;" Guid="8f66b4fa-3740-4c0d-8316-e4d8b9b8d4d9" InformativeScreenshot="7e0944356a1cdbe9537d3e33409463a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="acb94a5afd05a2368c9189636b829ae3.jpg" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;" Title="ACME System 1 - Vendors - Search" Url="https://acme-test.uipath.com/vendors/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
